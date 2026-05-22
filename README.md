@@ -15,8 +15,8 @@ Este repositório contém o desenvolvimento da **AV2 — Laboratório de Banco d
 - ✅ Modelagem de 5 tabelas relacionadas
 - ✅ Criação de chaves primárias e estrangeiras
 - ✅ 100 comandos `INSERT` (20 por tabela)
-- ✅ 100 comandos `UPDATE` com cláusula `WHERE`
-- ✅ 100 comandos `DELETE` com cláusula `WHERE`
+- ✅ 100 comandos `UPDATE` com cláusula `WHERE`(20 por tabela)
+- ✅ 100 comandos `DELETE` com cláusula `WHERE`(20 por tabela)
 - ✅ 50 expressões `SELECT` com `JOIN`, `WHERE`, funções e `GROUP BY`
 
 **Disciplina:** Laboratório de Banco de Dados
