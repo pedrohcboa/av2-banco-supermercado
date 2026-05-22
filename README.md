@@ -28,7 +28,7 @@ Este repositório contém o desenvolvimento da **AV2 — Laboratório de Banco d
 
 | Integrante | Função | Responsabilidades |
 |------------|--------|-------------------|
-| **[Nome 1]** | Arquiteto do Banco / Coordenador | Modelagem, criação das tabelas, coordenação do Git, montagem do documento final |
+| **[Pedro]** | Dev - Criar as 5 tabelas | Modelagem, criação das tabelas, coordenação do Git, montagem do documento final |
 | **[Nome 2]** | Dev — CATEGORIA + FORNECEDOR | INSERTs, UPDATEs, DELETEs e SELECTs dessas tabelas |
 | **[Nome 3]** | Dev — CLIENTE | INSERTs, UPDATEs, DELETEs e SELECTs dessa tabela |
 | **[Nome 4]** | Dev — PRODUTO | INSERTs, UPDATEs, DELETEs e SELECTs dessa tabela |
