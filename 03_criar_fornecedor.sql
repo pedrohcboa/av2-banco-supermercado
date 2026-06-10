@@ -1,6 +1,15 @@
+-- =====================================================
+-- AV2 - LABORATÓRIO DE BANCO DE DADOS
+-- Tema: Supermercado Tradicional
+-- Grupo: [nomes dos integrantes do grupo]
+-- Arquivo: 03_criar_fornecedor.sql
+-- Descrição: Cria a tabela FORNECEDOR e insere os dados da base.
+--            Tabela "filha" de CATEGORIA (FK id_categoria_principal).
+--            Tabela "pai" — referenciada por PRODUTO.
+-- =====================================================
+
 USE Supermercado;
 GO
-
 CREATE TABLE FORNECEDOR (
     id_fornecedor            INT             IDENTITY(1,1) NOT NULL,
     razao_social             VARCHAR(100)    NOT NULL,
@@ -19,4 +28,30 @@ CREATE TABLE FORNECEDOR (
     CONSTRAINT FK_FORNECEDOR_CATEGORIA FOREIGN KEY (id_categoria_principal)
         REFERENCES CATEGORIA (id_categoria)
 );
+GO
+
+INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal)
+VALUES ('Coca-Cola Indústrias Ltda', 'Coca-Cola', '45997418000153', '1133334444', 'contato@cocacola.com.br', 'São Paulo', 'SP', 1);
+
+INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal)
+VALUES ('Nestlé Brasil Ltda', 'Nestlé', '60409075000152', '1144445555', 'contato@nestle.com.br', 'São Paulo', 'SP', 2);
+
+INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal)
+VALUES ('Unilever Brasil Ltda', 'Unilever', '61068276000157', '1155556666', 'contato@unilever.com.br', 'São Paulo', 'SP', 3);
+
+INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal)
+VALUES ('Sadia S.A.', 'Sadia', '20730099000194', '4733334444', 'contato@sadia.com.br', 'Concórdia', 'SC', 5);
+
+INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal)
+VALUES ('JBS Foods S.A.', 'Friboi', '02916265000160', '1166667777', 'contato@jbs.com.br', 'São Paulo', 'SP', 5);
+GO
+
+-- Conferir resultado
+SELECT
+    f.id_fornecedor,
+    f.nome_fantasia AS fornecedor,
+    c.nome AS categoria_principal
+FROM FORNECEDOR f
+LEFT JOIN CATEGORIA c ON f.id_categoria_principal = c.id_categoria
+ORDER BY f.id_fornecedor;
 GO
