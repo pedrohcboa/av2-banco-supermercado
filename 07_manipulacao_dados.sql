@@ -1,27 +1,10 @@
--- =====================================================
--- AV2 - LABORATÓRIO DE BANCO DE DADOS
--- Tema: Supermercado Tradicional
--- Grupo: [nomes dos integrantes do grupo]
--- Arquivo: 07_manipulacao_dados.sql
--- Descrição: Demonstração de manipulação de dados (DML).
---   Roda POR CIMA da base criada pelos arquivos 01 a 06 (5 linhas/tabela).
---   Ordem: 100 INSERT -> 100 UPDATE -> 50 SELECT -> 100 DELETE.
---   Os DELETE removem apenas as linhas inseridas aqui (ids 6-25);
---   a base de 5 linhas por tabela permanece intacta.
--- =====================================================
+
 
 USE Supermercado;
 GO
 
--- #####################################################################
--- ##  PASSO 1 de 4  ->  SELECIONE DESTA LINHA ATE O FIM DA SECAO 1 ##
--- ##                E APERTE F5 (insere as 100 linhas novas)       ##
--- #####################################################################
--- =====================================================
--- SEÇÃO 1 - INSERT (100 comandos) - 20 por tabela, ordem pai->filha
--- =====================================================
 
--- CATEGORIA (20 INSERT)
+
 INSERT INTO CATEGORIA (nome, descricao) VALUES ('Mercearia', 'Itens básicos de despensa');
 INSERT INTO CATEGORIA (nome, descricao) VALUES ('Congelados', 'Alimentos congelados e pré-prontos');
 INSERT INTO CATEGORIA (nome, descricao) VALUES ('Higiene Pessoal', 'Produtos de cuidado pessoal');
@@ -44,7 +27,7 @@ INSERT INTO CATEGORIA (nome, descricao) VALUES ('Bebidas Quentes', 'Chás, infus
 INSERT INTO CATEGORIA (nome, descricao) VALUES ('Utilidades Domésticas', 'Utensílios e itens para casa');
 GO
 
--- FORNECEDOR (20 INSERT) - id_categoria_principal aponta para categorias novas (6..25)
+
 INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal) VALUES ('Atacadão Distribuição S.A.', 'Atacadão', '75315333000109', '1130000000', 'contato@atacadao.com.br', 'São Paulo', 'SP', 6);
 INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal) VALUES ('Friozem Congelados Ltda', 'Friozem', '11444555000166', '1130111111', 'contato@friozem.com.br', 'São Paulo', 'SP', 7);
 INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal) VALUES ('Higiluxo Cosméticos Ltda', 'Higiluxo', '22555666000177', '1130222222', 'contato@higiluxo.com.br', 'São Paulo', 'SP', 8);
@@ -67,7 +50,7 @@ INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cida
 INSERT INTO FORNECEDOR (razao_social, nome_fantasia, cnpj, telefone, email, cidade, estado, id_categoria_principal) VALUES ('Tramontina Utilidades S.A.', 'Tramontina', '84683408000103', '1132111109', 'contato@tramontina.com.br', 'São Paulo', 'SP', 25);
 GO
 
--- CLIENTE (20 INSERT)
+
 INSERT INTO CLIENTE (nome, cpf, data_nascimento, email, telefone, cidade, estado, sexo) VALUES ('Juliana Rodrigues Alves', '60000000000', '1975-01-01', 'juliana.alves@email.com', '24980000000', 'Volta Redonda', 'RJ', 'F');
 INSERT INTO CLIENTE (nome, cpf, data_nascimento, email, telefone, cidade, estado, sexo) VALUES ('Marcos Vinícius Pereira', '60001010101', '1976-02-02', 'marcos.pereira@email.com', '24980101010', 'Barra Mansa', 'RJ', 'M');
 INSERT INTO CLIENTE (nome, cpf, data_nascimento, email, telefone, cidade, estado, sexo) VALUES ('Fernanda Lima Carvalho', '60002020202', '1977-03-03', 'fernanda.carvalho@email.com', '24980202020', 'Resende', 'RJ', 'F');
@@ -90,7 +73,7 @@ INSERT INTO CLIENTE (nome, cpf, data_nascimento, email, telefone, cidade, estado
 INSERT INTO CLIENTE (nome, cpf, data_nascimento, email, telefone, cidade, estado, sexo) VALUES ('Mariana Bittencourt Reis', '60019191919', '1994-08-20', 'mariana.reis@email.com', '24981919190', 'Barra Mansa', 'RJ', 'F');
 GO
 
--- PRODUTO (20 INSERT) - referenciam categoria nova e fornecedor novo (6..25)
+
 INSERT INTO PRODUTO (nome, descricao, codigo_barras, preco_custo, preco_venda, estoque, id_categoria, id_fornecedor) VALUES ('Açúcar Refinado 1kg', 'Açúcar refinado união', '2001000000016', 2.20, 3.99, 200, 6, 6);
 INSERT INTO PRODUTO (nome, descricao, codigo_barras, preco_custo, preco_venda, estoque, id_categoria, id_fornecedor) VALUES ('Lasanha Congelada 600g', 'Lasanha à bolonhesa congelada', '2001000000023', 9.50, 15.90, 70, 7, 7);
 INSERT INTO PRODUTO (nome, descricao, codigo_barras, preco_custo, preco_venda, estoque, id_categoria, id_fornecedor) VALUES ('Sabonete Líquido 250ml', 'Sabonete líquido hidratante', '2001000000030', 3.10, 5.49, 150, 8, 8);
@@ -113,7 +96,7 @@ INSERT INTO PRODUTO (nome, descricao, codigo_barras, preco_custo, preco_venda, e
 INSERT INTO PRODUTO (nome, descricao, codigo_barras, preco_custo, preco_venda, estoque, id_categoria, id_fornecedor) VALUES ('Jogo de Talheres 4pç', 'Jogo de talheres inox', '2001000000207', 9.00, 16.90, 35, 25, 25);
 GO
 
--- VENDA (20 INSERT) - referenciam cliente novo e produto novo (6..25)
+
 INSERT INTO VENDA (id_cliente, id_produto, quantidade, preco_unitario, desconto, valor_total, forma_pagamento) VALUES (6, 6, 1, 3.99, 0.00, 3.99, 'Dinheiro');
 INSERT INTO VENDA (id_cliente, id_produto, quantidade, preco_unitario, desconto, valor_total, forma_pagamento) VALUES (7, 7, 2, 15.90, 0.50, 31.30, 'Cartão de Débito');
 INSERT INTO VENDA (id_cliente, id_produto, quantidade, preco_unitario, desconto, valor_total, forma_pagamento) VALUES (8, 8, 3, 5.49, 1.00, 15.47, 'Cartão de Crédito');
@@ -136,15 +119,7 @@ INSERT INTO VENDA (id_cliente, id_produto, quantidade, preco_unitario, desconto,
 INSERT INTO VENDA (id_cliente, id_produto, quantidade, preco_unitario, desconto, valor_total, forma_pagamento) VALUES (25, 25, 5, 16.90, 0.50, 84.00, 'Vale Alimentação');
 GO
 
--- #####################################################################
--- ##  PASSO 2 de 4  ->  SELECIONE A SEÇÃO 2 INTEIRA E APERTE F5    ##
--- ##                (aplica os 100 UPDATE)                         ##
--- #####################################################################
--- =====================================================
--- SEÇÃO 2 - UPDATE (100 comandos) - todos com WHERE
--- =====================================================
 
--- CATEGORIA (20 UPDATE)
 UPDATE CATEGORIA SET descricao = 'Categoria revisada em auditoria' WHERE id_categoria = 6;
 UPDATE CATEGORIA SET descricao = 'Categoria revisada em auditoria' WHERE id_categoria = 7;
 UPDATE CATEGORIA SET descricao = 'Categoria revisada em auditoria' WHERE id_categoria = 8;
@@ -259,14 +234,8 @@ UPDATE VENDA SET forma_pagamento = 'Dinheiro' WHERE id_venda = 24;
 UPDATE VENDA SET forma_pagamento = 'Cartão de Débito' WHERE id_venda = 25;
 GO
 
--- #####################################################################
--- ##  PASSO 3 de 4  ->  SELECIONE A SEÇÃO 3 INTEIRA E APERTE F5    ##
--- ##  *** AQUI VOCE TIRA OS PRINTS DOS RESULTADOS (banco cheio) ***##
--- ##  Dica: rode em grupos de ~8-10 consultas para printar com calma##
--- #####################################################################
--- =====================================================
+
 -- SEÇÃO 3 - SELECT (50 comandos)
--- =====================================================
 
 -- Consulta 1
 SELECT * FROM CATEGORIA;
@@ -468,14 +437,7 @@ GO
 SELECT AVG(valor_total) AS ticket_medio FROM VENDA;
 GO
 
--- #####################################################################
--- ##  PASSO 4 de 4  ->  SELECIONE A SEÇÃO 4 INTEIRA E APERTE F5    ##
--- ##  (apaga as 100 linhas novas; a base de 5 por tabela continua) ##
--- ##  RODE POR ULTIMO, DEPOIS DE TIRAR OS PRINTS DO PASSO 3        ##
--- #####################################################################
--- =====================================================
--- SEÇÃO 4 - DELETE (100 comandos) - ordem filha->pai
--- =====================================================
+-
 
 -- VENDA (20 DELETE) - tabela filha, deletada primeiro
 DELETE FROM VENDA WHERE id_venda = 6;
