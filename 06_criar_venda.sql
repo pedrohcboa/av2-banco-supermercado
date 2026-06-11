@@ -45,7 +45,6 @@ GO
 SELECT * FROM VENDA;
 GO
 
--- SELECT bonito com JOINs em todas as tabelas
 SELECT
     v.id_venda,
     c.nome AS cliente,
