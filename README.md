@@ -24,18 +24,6 @@ Este repositório contém o desenvolvimento da **AV2 — Laboratório de Banco d
 
 ---
 
-## 👥 Equipe
-
-| Integrante | Função | Responsabilidades |
-|------------|--------|-------------------|
-| **[Pedro]** | Dev - Criar as 5 tabelas | Modelagem, criação das tabelas, coordenação do Git, montagem do documento final |
-| **[Nome 2]** | Dev — CATEGORIA + FORNECEDOR | INSERTs, UPDATEs, DELETEs e SELECTs dessas tabelas |
-| **[Nome 3]** | Dev — CLIENTE | INSERTs, UPDATEs, DELETEs e SELECTs dessa tabela |
-| **[Nome 4]** | Dev — PRODUTO | INSERTs, UPDATEs, DELETEs e SELECTs dessa tabela |
-| **[Nome 5]** | Dev — VENDA / Documentação | INSERTs, UPDATEs, DELETEs, SELECTs e captura de prints |
-
----
-
 ## 🗄️ Modelagem do Banco
 
 O banco possui **5 tabelas** relacionadas, modeladas a partir do contexto de um supermercado tradicional:
@@ -161,37 +149,6 @@ Abra os arquivos no SSMS **nesta ordem** (importante!):
 
 > ⚠️ Os INSERTs devem ser executados **nesta ordem** para respeitar as chaves estrangeiras:
 > `CATEGORIA → FORNECEDOR → CLIENTE → PRODUTO → VENDA`
-
----
-
-## 📅 Roteiro de Desenvolvimento
-
-O projeto está dividido em fases para permitir trabalho em paralelo:
-
-### ✅ Fase 1 — Setup Inicial
-- [x] Criar banco de dados
-- [x] Criar tabelas CATEGORIA e FORNECEDOR
-- [ ] Criar tabelas CLIENTE, PRODUTO e VENDA
-- [ ] Subir tudo no GitHub e convidar grupo
-
-### ⏳ Fase 2 — Configuração do Grupo
-- [ ] Cada integrante clona o repositório
-- [ ] Cada integrante instala SQL Server + SSMS
-- [ ] Todos executam os scripts iniciais
-
-### ⏳ Fase 3 — INSERTs (em ordem por dependência)
-- [ ] CATEGORIA e FORNECEDOR (sem dependências)
-- [ ] CLIENTE (sem dependências)
-- [ ] PRODUTO (depende de CATEGORIA e FORNECEDOR)
-- [ ] VENDA (depende de CLIENTE e PRODUTO)
-
-### ⏳ Fase 4 — UPDATEs, DELETEs e SELECTs
-- [ ] Todos os integrantes trabalham em paralelo nas suas tabelas
-
-### ⏳ Fase 5 — Documentação e Apresentação
-- [ ] Captura de prints dos SELECTs
-- [ ] Montagem do documento Word
-- [ ] Ensaio da apresentação em sala
 
 ---
 
