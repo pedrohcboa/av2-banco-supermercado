@@ -48,7 +48,6 @@ GO
 SELECT * FROM PRODUTO;
 GO
 
--- Conferir com JOIN — mostra nomes em vez de IDs
 SELECT
     p.id_produto,
     p.nome AS produto,
