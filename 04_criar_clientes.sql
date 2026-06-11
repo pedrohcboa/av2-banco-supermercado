@@ -1,19 +1,6 @@
--- =====================================================
--- AV2 - LABORATÓRIO DE BANCO DE DADOS
--- Tema: Supermercado Tradicional
--- Grupo: [nomes dos integrantes do grupo]
--- Arquivo: 04_criar_cliente.sql
--- Descrição: Cria a tabela CLIENTE e insere dados iniciais.
---            Tabela "pai" — referenciada por VENDA.
--- =====================================================
-
 USE Supermercado;
 GO
-
--- =====================================================
--- TABELA: CLIENTE
--- Armazena os clientes cadastrados no supermercado.
--- =====================================================
+    
 CREATE TABLE CLIENTE (
     id_cliente        INT             IDENTITY(1,1) NOT NULL,
     nome              VARCHAR(100)    NOT NULL,
