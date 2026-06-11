@@ -1,13 +1,3 @@
--- =====================================================
--- AV2 - LABORATÓRIO DE BANCO DE DADOS
--- Tema: Supermercado Tradicional
--- Grupo: [nomes dos integrantes do grupo]
--- Arquivo: 03_criar_fornecedor.sql
--- Descrição: Cria a tabela FORNECEDOR e insere os dados da base.
---            Tabela "filha" de CATEGORIA (FK id_categoria_principal).
---            Tabela "pai" — referenciada por PRODUTO.
--- =====================================================
-
 USE Supermercado;
 GO
 CREATE TABLE FORNECEDOR (
